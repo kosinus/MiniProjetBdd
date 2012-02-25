@@ -74,7 +74,3 @@ html_entete_page('Page principale','style.css','script.js');
         
 </ul>
 
-
-<?php
-html_fin_page();
-?>
