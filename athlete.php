@@ -97,7 +97,7 @@ if($_GET["action"]==4){
 						<td>$l0[0]</td>
 						<td>$l0[1]</td>
 						<td>$l1[0]</td>
-						<td style=\"border:0\"><a href=\"athlete.php?action=4&suppr=1&athlete_a_suppr=$l0[0]\"><img src=\"ressources/ico_delete.gif\"/></a></td>
+						<td style=\"border:0\"><a href=\"athlete.php?action=4&suppr=1&athlete_a_suppr=$l0[0]\" onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));\"><img src=\"ressources/ico_delete.gif\"/></a></td>
 								</tr>";
 				}
 	echo "</tbody>
