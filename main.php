@@ -16,12 +16,7 @@ mysql_select_db($db,$link);
         </li>
         <li>
                 <a href="athlete.php">Athletes</a>
-                <ul>
-                        <li><a href="athlete.php?action=1">Consulter la liste des athlètes</a></li>
-                        <li><a href="athlete.php?action=2">Ajouter un athlete</a></li>
-                        <li><a href="athlete.php?action=3">Modifier un athlete</a></li>
-                        <li><a href="athlete.php?action=4">Supprimer un athlete</a></li>
-                </ul>
+
         </li>
         <li>
                 <a href="club.php">Clubs</a>
