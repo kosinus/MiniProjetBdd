@@ -1,131 +1,113 @@
 <?php
 require_once("main.php");
 
-/*Consultation*/
-if($_GET["action"]==1){
-	if($_GET["ajout"]==1){
-		$nomAthlete=$_POST["nomAthlete"];
-		$clubAthlete=$_POST["clubAthlete"];
-		$ajout = mysql_query("insert into ATHLETE values (null,'$nomAthlete','$clubAthlete')",$link);
-	}
-	echo "consultation";
-	$res0 = mysql_query("select * from ATHLETE",$link);
-	echo "<br/>
-				<table id=\"consultAthlete\" border=1><caption>Athletes</caption>
-				<thead>
-					<tr>
-						<th>No Athlète</th>
-						<th>Nom</th>
-						<th>Club</th>
-					</tr>
-				</thead>
-				<tbody>";
-				while($l0 = mysql_fetch_array($res0)){
-					$res1 = mysql_query("select nomClub from CLUB where noClub=$l0[2]",$link);
-					$l1 = mysql_fetch_array($res1);
-					echo "<tr>
-						<td>$l0[0]</td>
-						<td>$l0[1]</td>
-						<td>$l1[0]</td>
-								</tr>";
-				}
-	echo "</tbody>
-				</table>";
+/*applique la suppression*/
+if($_GET['action']==3)
+	$sup=mysql_query("DELETE FROM ATHLETE WHERE noAthlete=".$_GET['no'],$link);
+/*applique la modification*/
+if($_GET['modif']==1){
+	$nomAthlete=$_POST['modNom'];
+	$clubAthlete=$_POST['modClub'];
+	$requete="UPDATE ATHLETE SET nomAthlete='".$nomAthlete."', noClub='".$clubAthlete."' WHERE noAthlete='".$_GET['no']."'";
+	$mod=mysql_query("UPDATE ATHLETE SET nomAthlete='".$nomAthlete."', noClub='".$clubAthlete."' WHERE noAthlete='".$_GET['no']."'",$link);
 }
-/*Insertion*/
-if($_GET["action"]==2){
-	echo "insertion";
-	$res0 = mysql_query("select * from ATHLETE",$link);
-	echo "<br/><form id=\"insertAthlete\" method=\"post\" action=\"athlete.php?action=1&ajout=1\">
-				<table id=\"consultAthlete\" border=1><caption>Athletes</caption>
-				<thead>
-					<tr>
-						<th>No Athlète</th>
-						<th>Nom</th>
-						<th>Club</th>
-					</tr>
-				</thead>
-				<tbody>";
-				while($l0 = mysql_fetch_array($res0)){
-					$res1 = mysql_query("select nomClub from CLUB where noClub=$l0[2]",$link);
-					$l1 = mysql_fetch_array($res1);
-					echo "<tr>
-						<td>$l0[0]</td>
-						<td>$l0[1]</td>
-						<td>$l1[0]</td>
-								</tr>";
-				}
-	echo "</tbody>
-				<tfoot>
-					<tr>
-						<td>-</td>
-						<td><input type=\"text\" name=\"nomAthlete\"></td>
-						<td><select name=\"clubAthlete\" id=\"clubAthlete\">";
-							$res = mysql_query("select * from CLUB",$link);
-							while ($l = mysql_fetch_array($res))
-								echo "<option value=\"$l[0]\">$l[1]</option>";
-							echo "</select></td>
-					</tr>
-				</tfoot>
-				</table><input type=\"submit\" id=\"newAthlete\" value=\"Valider\"></form>";
+if($_GET['action']==2){
+	$editNo=$_GET['no'];
+	echo "<form id=\"formAthletes\" method=\"post\" action=\"athlete.php?modif=1&no=$editNo\">\n";
 }
-/*Modification*/
-if($_GET["action"]==3){
-	echo "modification";
+else{
+	echo "<form id=\"formAthletes\" method=\"post\" action=\"athlete.php?ajout=1\">\n";
+	$editNo=-1;
 }
-/*Suppression*/
-if($_GET["action"]==4){
-	if($_GET["suppr"]==1){
-		$suppression = mysql_query("delete from ATHLETE where noAthlete='".$_GET["athlete_a_suppr"]."'",$link);
-	}
-	echo "suppression";
-	$res0 = mysql_query("select * from ATHLETE",$link);
-	echo "<br/>
-				<table id=\"consultAthlete\" border=1><caption>Athletes</caption>
-				<thead>
-					<tr>
-						<th>No Athlète</th>
-						<th>Nom</th>
-						<th>Club</th>
-					</tr>
-				</thead>
-				<tbody>";
-				while($l0 = mysql_fetch_array($res0)){
-					$res1 = mysql_query("select nomClub from CLUB where noClub=$l0[2]",$link);
-					$l1 = mysql_fetch_array($res1);
-					echo "<tr>
-						<td>$l0[0]</td>
-						<td>$l0[1]</td>
-						<td>$l1[0]</td>
-						<td style=\"border:0\"><a href=\"athlete.php?action=4&suppr=1&athlete_a_suppr=$l0[0]\" onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));\"><img src=\"ressources/ico_delete.gif\"/></a></td>
-								</tr>";
-				}
-	echo "</tbody>
-				</table>";
+/*applique l'ajout*/
+if($_GET['ajout']==1){
+	$nomAthlete=$_POST['newNom'];
+	$clubAthlete=$_POST['club'];
+	$add=mysql_query("INSERT INTO ATHLETE VALUES (null,'$nomAthlete','$clubAthlete')",$link);
 }
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<table id="tabAthletes" border="1">
+	<caption>
+		Athletes
+	</caption>
+	<thead>
+		<tr>
+			<th>No Athlète</th>
+			<th>Nom</th>
+			<th>Club</th>
+		</tr>
+	</thead>
+	<tbody>
+<?php
+$res0=mysql_query("SELECT * FROM ATHLETE",$link);
+while($l=mysql_fetch_array($res0)){
+	echo"<tr>\n";
+	/*No Athlètes*/
+	echo"		<td><input type=\"text\"disabled=\"disabled\"value=\"$l[0]\"/></td>\n";
+	/*Si Mode Edition*/
+	if($l[0]==$editNo){
+		/*Nom modifiable*/
+		echo"		<td><input name=\"modNom\"type=\"text\"value=\"$l[1]\"/></td>\n";
+		/*Club modifiable*/
+		echo"		<td>\n";
+		echo"			<select name=\"modClub\">\n";
+		$res1=mysql_query("SELECT * FROM CLUB WHERE noClub=$l[2]",$link);
+		$n=mysql_fetch_array($res1);
+		echo"					<option selected value=\"$n[0]\">$n[1]</option>\n";
+		$res1=mysql_query("SELECT * FROM CLUB",$link);
+		while($m=mysql_fetch_array($res1)){
+			echo"				<option value=\"$m[0]\">$m[1]</option>\n";
+		}
+		echo"			</select>\n";
+		echo"		</td>\n";
+		/*Boutons (submit)*/
+		echo"<td><input type=\"image\" src=\"ressources/ico_ok.gif\" alt=\"valider\"/></td>\n";
+	}
+	/*Sinon*/
+	else {
+		/*Nom disabled*/
+		echo"		<td><input type=\"text\"disabled=\"disabled\"value=\"$l[1]\"/></td>\n";
+		/*Club disabled*/
+		echo"		<td>\n";
+		echo"			<select disabled=\"disabled\">\n";
+		$res1=mysql_query("SELECT * FROM CLUB WHERE noClub=$l[2]",$link);
+		$m=mysql_fetch_array($res1);
+		echo"				<option selected>$m[1]</option>\n";
+		echo"			</select>\n";
+		echo"		</td>\n";
+		/*Boutons (liens)*/
+		echo"		<td>\n
+							<a
+								href=\"athlete.php?action=2&no=$l[0]\"/>
+								<img src=\"ressources/ico_edit.gif\"/>
+							</a>\n
+							<a
+								href=\"athlete.php?action=3&no=$l[0]\"
+								onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));\"/>
+								<img src=\"ressources/ico_delete.gif\"/>
+							</a>\n
+					</td>\n";
+	}
+	echo"</tr>\n";
+}
+/*barre d'ajout*/
+if($_GET['action']==1){
+	echo"<tr>\n";
+	echo"<td><input type=\"text\" disabled=\"disabled\" value=\"-\" /></td>\n";
+  echo"<td><input type=\"text\" name=\"newNom\" /></td>\n";
+	echo"<td><select name=\"club\"><option selected>...</option>\n";
+	$res1=mysql_query("select * from CLUB",$link);
+	while($m=mysql_fetch_array($res1))
+		echo"<option value=$m[0]>$m[1]</option>\n";
+	echo"</select></td>\n";
+	echo"<td><input type=\"image\" src=\"ressources/ico_ok.gif\" alt=\"valider\"/></td>\n";
+	echo"</tr>\n";
+}//fin barre d'ajout
+?>
+	</tbody>
+</table>
+<a href="athlete.php?action=1"><img src="ressources/ico_add.png"/></a>
+</form>
 
 <?php
 html_fin_page();
