@@ -1,7 +1,15 @@
 <?php
 require_once("fonctions_fichier_html.php");
 html_entete_page('Page principale','style.css','script.js');
+/*Connexion à la base*/
+$host='localhost';
+$user='root';
+$pass='slim72';
+$db='miniProjetBdd';
+$link=mysql_connect($host,$user,$pass) or die(mysql_error());
+mysql_select_db($db,$link);
 ?>
+<!-- Menu Principale -->
 <ul id="menu">
         <li>
                 <a href="accueil.php">accueil</a>
@@ -71,4 +79,5 @@ html_entete_page('Page principale','style.css','script.js');
         </li>
         
 </ul>
+<br/><br/>
 
