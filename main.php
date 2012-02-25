@@ -9,10 +9,10 @@ html_entete_page('Page principale','style.css','script.js');
         <li>
                 <a href="athlete.php">Athletes</a>
                 <ul>
-                        <li><a href="#">Consulter la liste des athlètes</a></li>
-                        <li><a href="#">Ajouter un athlete</a></li>
-                        <li><a href="#">Modifier un athlete</a></li>
-                        <li><a href="#">Supprimer un athlete</a></li>
+                        <li><a href="athlete.php?action=1">Consulter la liste des athlètes</a></li>
+                        <li><a href="athlete.php?action=2">Ajouter un athlete</a></li>
+                        <li><a href="athlete.php?action=3">Modifier un athlete</a></li>
+                        <li><a href="athlete.php?action=4">Supprimer un athlete</a></li>
                 </ul>
         </li>
         <li>
@@ -29,9 +29,9 @@ html_entete_page('Page principale','style.css','script.js');
                 <a href="competition.php">Competitions</a>
                 <ul>
                         <li><a href="#">Consulter la liste des compétitions</a></li>
-                        <li><a href="#">Ajouter un compétition</a></li>
-                        <li><a href="#">Modifier un compétition</a></li>
-                        <li><a href="#">Supprimer un compétition</a></li>
+                        <li><a href="#">Ajouter une compétition</a></li>
+                        <li><a href="#">Modifier une compétition</a></li>
+                        <li><a href="#">Supprimer une compétition</a></li>
                 </ul>
         </li>
 
@@ -39,9 +39,9 @@ html_entete_page('Page principale','style.css','script.js');
                 <a href="discipline.php">Disciplines</a>
                 <ul>
                         <li><a href="#">Consulter la liste des disciplines</a></li>
-                        <li><a href="#">Ajouter un discipline</a></li>
-                        <li><a href="#">Modifier un discipline</a></li>
-                        <li><a href="#">Supprimer un discipline</a></li>
+                        <li><a href="#">Ajouter une discipline</a></li>
+                        <li><a href="#">Modifier une discipline</a></li>
+                        <li><a href="#">Supprimer une discipline</a></li>
                 </ul>
         </li>
 
@@ -49,9 +49,9 @@ html_entete_page('Page principale','style.css','script.js');
                 <a href="ville.php">Villes</a>
                 <ul>
                         <li><a href="#">Consulter la liste des villes participantes</a></li>
-                        <li><a href="#">Ajouter un ville</a></li>
-                        <li><a href="#">Modifier un ville</a></li>
-                        <li><a href="#">Supprimer un ville</a></li>
+                        <li><a href="#">Ajouter une ville</a></li>
+                        <li><a href="#">Modifier une ville</a></li>
+                        <li><a href="#">Supprimer une ville</a></li>
                 </ul>
         </li>
 

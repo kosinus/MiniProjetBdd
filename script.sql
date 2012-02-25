@@ -55,3 +55,21 @@ create table CLASSEMENT(
 	constraint fkClass1 foreign key(noCompet) references COMPETITION(noCompet) on delete cascade,
 	constraint fkClass2 foreign key(noDiscipline) references DISCIPLINE(noDiscipline) on delete cascade
 )type=InnoDB;
+
+insert into VILLE values
+(null,'Besancon'),
+(null,'Belfort'),
+(null,'Paris');
+insert into CLUB values
+(null,'Besak Athlé',1),
+(null,'Belf Club',2),
+(null,'Paris Racing',3),
+(null,'Athlétisme parisien',3);
+insert into ATHLETE values
+(null,'Patoulatchi',4),
+(null,'Martinez',1),
+(null,'Scoty',3),
+(null,'Sangoku',2),
+(null,'Sangohan',2);
+
+
