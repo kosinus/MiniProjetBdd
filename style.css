@@ -64,7 +64,7 @@ html>body #menu li ul ul
 #menu a:hover /* Lorsque la souris passe sur un des liens */    
 {
         color: #000; /* On passe le texte en noir... */
-        background: #fff; /* ... et au contraire, le fond en blanc */
+        background: gray; /* ... et au contraire, le fond en blanc */
 }
 #menu li:hover ul ul, #menu li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
 {
