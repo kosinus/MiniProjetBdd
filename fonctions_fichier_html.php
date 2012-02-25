@@ -10,11 +10,11 @@ function html_entete_page($titre,$fichierstyle="",$fichierJava="") {
     print("<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />\n");
    	print("<link rel=\"stylesheet\" type=\"text/css\" href=\"".$fichierstyle."\" /> \n");
 
-/* A rajouter pour utiliser des fonctions javascript
+/* A rajouter pour utiliser des fonctions javascript */
     print("<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\"> \n");
     print("<script src=\"jquery-1.3.1.js\" type=\"text/javascript\"></script> \n");
     print("<script src=\"".$fichierJava."\" type=\"text/javascript\"></script> \n");    
-*/
+
 
 	print("</head>\n<body>\n");
 }
