@@ -8,7 +8,6 @@ if($_GET['action']==3)
 if($_GET['modif']==1){
 	$nomAthlete=$_POST['modNom'];
 	$clubAthlete=$_POST['modClub'];
-	$requete="UPDATE ATHLETE SET nomAthlete='".$nomAthlete."', noClub='".$clubAthlete."' WHERE noAthlete='".$_GET['no']."'";
 	$mod=mysql_query("UPDATE ATHLETE SET nomAthlete='".$nomAthlete."', noClub='".$clubAthlete."' WHERE noAthlete='".$_GET['no']."'",$link);
 }
 if($_GET['action']==2){
