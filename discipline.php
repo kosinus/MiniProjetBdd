@@ -75,7 +75,7 @@ if($_GET['action']==1){
 ?>
 	</tbody>
 </table>
-<a href="discipline.php?action=1"><img src="ressources/ico_add.png"/></a>
+<a href="discipline.php?action=1"><img src="ressources/ico_add2.png"/></a>
 </form>
 <?php
 html_fin_page();

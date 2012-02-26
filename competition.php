@@ -114,7 +114,7 @@ if($_GET['action']==1){
 ?>
 	</tbody>
 </table>
-<a href="competition.php?action=1"><img src="ressources/ico_add.png"/></a>
+<a href="competition.php?action=1"><img src="ressources/ico_add2.png"/></a>
 </form>
 
 <?php
