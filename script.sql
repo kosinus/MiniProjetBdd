@@ -96,4 +96,26 @@ insert into DISCIPLINE values
 (null,'Record Divers'),
 (null,'Course a pied'),
 (null,'Tir instinctif');
+insert into ESTSPECIALISTE values
+(1,2),
+(1,5),
+(2,1),
+(2,2),
+(3,4),
+(4,3),
+(4,4),
+(4,5),
+(5,1),
+(6,1),
+(7,2),
+(7,3),
+(8,3),
+(9,1),
+(10,2),
+(10,5),
+(11,2),
+(11,5),
+(12,2),
+(12,5);
+
 
