@@ -39,6 +39,9 @@ mysql_select_db($db,$link);
                 <a href="estSpecialiste.php">Spécialités</a>
         </li>
 
+        <li>
+                <a href="classement.php">Classements</a>
+        </li>
         
         <li>
                 <a href="requetes.php">Requetes</a>
