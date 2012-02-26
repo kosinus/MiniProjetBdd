@@ -45,7 +45,7 @@ while($l=mysql_fetch_array($res0)){
 	echo"		<td><input type=\"text\"disabled=\"disabled\"value=\"$l[0]\"/></td>\n";
 	/*Si Mode Edition*/
 	if($l[0]==$editNo){
-		/*Nom modifiable*/
+		/*Nom Athlète modifiable*/
 		echo"		<td><input name=\"modNom\"type=\"text\"value=\"$l[1]\"/></td>\n";
 		/*Club modifiable*/
 		echo"		<td>\n";
