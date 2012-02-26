@@ -35,6 +35,10 @@ mysql_select_db($db,$link);
                 <a href="ville.php">Villes</a>
         </li>
 
+        <li>
+                <a href="estSpecialiste.php">Spécialités</a>
+        </li>
+
         
         <li>
                 <a href="requetes.php">Requetes</a>
