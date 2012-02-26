@@ -2,6 +2,7 @@
 require_once("fonctions_fichier_html.php");
 html_entete_page('Page principale','style.css','script.js');
 /*Connexion à la base*/
+
 $host='localhost';
 $user='root';
 $pass='slim72';
