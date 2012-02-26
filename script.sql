@@ -59,17 +59,41 @@ create table CLASSEMENT(
 insert into VILLE values
 (null,'Besancon'),
 (null,'Belfort'),
-(null,'Paris');
+(null,'Paris'),
+(null,'Londres'),
+(null,'Tokyo'),
+(null,'Berlin'),
+(null,'NewYork');
 insert into CLUB values
 (null,'Besak Athlé',1),
 (null,'Belf Club',2),
 (null,'Paris Racing',3),
-(null,'Athlétisme parisien',3);
+(null,'Athlétisme parisien',3),
+(null,'London Sport Club',4),
+(null,'Japanese Club',5),
+(null,'Racing Berlin',6),
+(null,'New Yankees',7),
+(null,'Club of NewYork',7);
 insert into ATHLETE values
-(null,'Patoulatchi',4),
-(null,'Martinez',1),
-(null,'Scoty',3),
-(null,'Sangoku',2),
-(null,'Sangohan',2);
-
+(null,'Patoulatchi',1),
+(null,'Martinez',2),
+(null,'Momo',3),
+(null,'Gonzague',4),
+(null,'Miller',5),
+(null,'Andrew',5),
+(null,'Sangoku',6),
+(null,'Sangohan',6),
+(null,'Wolfgang',7),
+(null,'Douglas',8),
+(null,'Peterson',8),
+(null,'Bryan',9);
+insert into COMPETITION values
+(null,'Coupe de France','2012-07-12',3),
+(null,'Coupe du Monde','2014-08-01',5);
+insert into DISCIPLINE values
+(null,'Lancer de nains'),
+(null,'Hot Dog Fever'),
+(null,'Record Divers'),
+(null,'Course a pied'),
+(null,'Tir instinctif');
 

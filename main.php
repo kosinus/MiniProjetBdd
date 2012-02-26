@@ -25,12 +25,6 @@ mysql_select_db($db,$link);
         
         <li>
                 <a href="competition.php">Competitions</a>
-                <ul>
-                        <li><a href="#">Consulter la liste des compétitions</a></li>
-                        <li><a href="#">Ajouter une compétition</a></li>
-                        <li><a href="#">Modifier une compétition</a></li>
-                        <li><a href="#">Supprimer une compétition</a></li>
-                </ul>
         </li>
 
         <li>
@@ -39,12 +33,6 @@ mysql_select_db($db,$link);
 
         <li>
                 <a href="ville.php">Villes</a>
-                <ul>
-                        <li><a href="#">Consulter la liste des villes participantes</a></li>
-                        <li><a href="#">Ajouter une ville</a></li>
-                        <li><a href="#">Modifier une ville</a></li>
-                        <li><a href="#">Supprimer une ville</a></li>
-                </ul>
         </li>
 
         

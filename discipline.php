@@ -25,7 +25,7 @@ else{
 ?>
 <table border=1 id=tabDiscipline>
 	<caption>
-		Disciplines Participantes
+		Disciplines
 	</caption>
 	<thead>
 		<tr>
