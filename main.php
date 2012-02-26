@@ -21,12 +21,6 @@ mysql_select_db($db,$link);
         </li>
         <li>
                 <a href="club.php">Clubs</a>
-                <ul>
-                        <li><a href="#">Consulter la liste des clubs</a></li>
-                        <li><a href="#">Ajouter un club</a></li>
-                        <li><a href="#">Modifier un club</a></li>
-                        <li><a href="#">Supprimer un club</a></li>
-                </ul>
         </li>
         
         <li>
@@ -41,12 +35,6 @@ mysql_select_db($db,$link);
 
         <li>
                 <a href="discipline.php">Disciplines</a>
-                <ul>
-                        <li><a href="#">Consulter la liste des disciplines</a></li>
-                        <li><a href="#">Ajouter une discipline</a></li>
-                        <li><a href="#">Modifier une discipline</a></li>
-                        <li><a href="#">Supprimer une discipline</a></li>
-                </ul>
         </li>
 
         <li>
