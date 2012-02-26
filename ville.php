@@ -37,9 +37,9 @@ while($l=mysql_fetch_array($res0)){
 							<img src=\"ressources/ico_edit.gif\"/>
 						</a>\n
 						<a
-							href=\"ville.php?action=3&no=$l[0]\"
-							onclick=\"return(confirm('Etes-vous sûr de vouloir supprimer cette entrée?'));\"/>
-							<img src=\"ressources/ico_delete.gif\"/>
+								href=\"ville.php?action=3&no=$l[0]\"
+								onclick=\"return(confirm('Les clubs et les athlètes de cette ville seront supprimés ! Etes-vous sûr(e) ?'));\"/>
+								<img src=\"ressources/ico_delete.gif\"/>
 						</a>\n
 					</td>\n";
 }
