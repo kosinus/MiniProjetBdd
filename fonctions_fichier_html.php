@@ -19,7 +19,7 @@ function html_entete_page($titre,$fichierstyle="",$fichierJava="") {
 	print("</head>\n<body>\n");
 }
 function html_fin_page() {
-	print("<div id=\"piedPage\" style=\"font-size:8px;position:absolute;top:90%;left:5%;right:5%;text-align:center\">\n");
+	print("<div id=\"piedPage\" style=\"font-size:8px;position:absolute;top:99%;left:5%;right:5%;text-align:center\">\n");
 	print("mini-projet ACSI-BDD\n");
 	print("</div>\n");
 	print("</body>\n");

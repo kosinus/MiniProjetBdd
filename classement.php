@@ -13,7 +13,7 @@ if($_GET['action']==1){
 }
 ?>
 <form method="post" id="formClassement" action="classement.php?action=1">
-<table border=1 style="position:absolute;left:5%;right:5%">
+<table border=1>
 	<caption>Classement</caption>
 	<thead>
 		<tr>
@@ -125,7 +125,7 @@ if($_GET['ajout']==1){
 ?>
 	</tbody>
 </table>
-<a href="classement.php?ajout=1"><img src="ressources/ico_add2.png"style="position:absolute;bottom:5%;right:5%"/></a>
+<a href="classement.php?ajout=1"><img src="ressources/ico_add2.png"/></a>
 </form>
 
 
