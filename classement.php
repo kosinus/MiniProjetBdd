@@ -4,7 +4,7 @@ require_once("main.php");
 
 
 <form method="post" id="formClassement" action="classement.php">
-<table border=1>
+<table border=1 style="position:absolute;left:5%;right:5%">
 	<caption>Classement</caption>
 	<thead>
 		<tr>
@@ -78,7 +78,7 @@ while($lcomp=mysql_fetch_array($comp)){
 
 	</tbody>
 </table>
-<a href="classement.php"><img src="ressources/ico_add2.png"/></a>
+<a href="classement.php"><img src="ressources/ico_add2.png"style="position:absolute;bottom:5%;right:5%"/></a>
 </form>
 
 
